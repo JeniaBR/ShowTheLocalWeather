@@ -1,0 +1,12 @@
+#current-day-container{
+    margin-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
+    position: relative;
+    border-radius: 5px;
+    background-color: blueviolet;
+    text-align: center;
+}

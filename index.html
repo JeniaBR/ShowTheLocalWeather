@@ -15,14 +15,29 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script src="skycons.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <h1>Test</h1>
-    <h2>Test Live Server</h2>
-    <div id="test">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="current-day-container">
+                <div id="city-region"></div>
+                <div id="country"></div>
+                <div id="current-temp"></div>
+                <div id="icon">
+                    <canvas id="icon-temp"></canvas>
+                </div>
+                <div id="condition-temp"></div>
+                <div class="forecast-container">
+                    <div>
+                        <span><i class="fa fa-arrow-up" aria-hidden="true"></i></span><span><div id="high-temp"></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

@@ -22,25 +22,45 @@ function getUserLocation() {
             type: 'GET',
             url: 'https://restcountries.eu/rest/v1/alpha/' + country,
             success: function (data) {
-                $('#test').text(city + ', ' + region + ' ' + data.name);
+                $('#city-region').text(city + ', ' + region);
+                $('#country').text(data.name);
             }
         });
     }
 
-    function getWeather(url){
+    function getWeather(url) {
         $.ajax({
-            type:'GET',
+            type: 'GET',
             url: url,
             dataType: 'jsonp',
             success: weatherParse
         });
 
-        function weatherParse(data){
-            var temp = Math.round(data.currently.temperature);
+        function weatherParse(data) {
+            var temp = toCel(data.currently.temperature);
+            var condition = data.currently.icon.split('-').join(' ');
+            var icon = data.currently.icon;
+            var minTemp = toCel(data.daily.data[0].temperatureMin);
+            var maxTemp = toCel(data.daily.data[0].temperatureMax);
+
+            $('#current-temp').text(temp + '\xB0');
+            setWeatherIcon(icon,"icon-temp");
+            $('#condition-temp').text(condition.toUpperCase());
+            $('#high-temp').text(maxTemp);
+            
         }
     }
 }
 
+function setWeatherIcon(icon,id){
+    var skycons = new Skycons({"color": "pink"});
+    skycons.add(id, icon);
+    skycons.play();
+}
+
+function toCel(f) {
+    return Math.round((f - 32) * 5 / 9);
+}
 
 $(document).ready(function () {
     getUserLocation();
