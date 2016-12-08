@@ -43,17 +43,28 @@ function getUserLocation() {
             var minTemp = toCel(data.daily.data[0].temperatureMin);
             var maxTemp = toCel(data.daily.data[0].temperatureMax);
 
-            $('#current-temp').text(temp + '\xB0');
-            setWeatherIcon(icon,"icon-temp");
+            $('#forecast-main').text(temp + '\xB0');
+            setWeatherIcon(icon, "icon-temp");
             $('#condition-temp').text(condition.toUpperCase());
-            $('#high-temp').text(maxTemp);
-            
+            $('#high-temp').text(maxTemp + '\xB0');
+            $('#low-temp').text(minTemp + '\xB0');
+
+            for (var i = 1; i < 2; i++) {
+                var day = moment.unix(data.daily.data[i].time).format('dddd');
+                var dayCond = data.daily.data[i].icon.split('-').join(' ');
+                var dayIcon = data.daily.data[i].icon;
+                var dayMinTemp = toCel(data.daily.data[i].temperatureMin);
+                var dayMaxTemp = toCel(data.daily.data[i].temperatureMax);
+            }
+
         }
     }
 }
 
-function setWeatherIcon(icon,id){
-    var skycons = new Skycons({"color": "pink"});
+function setWeatherIcon(icon, id) {
+    var skycons = new Skycons({
+        "color": "pink"
+    });
     skycons.add(id, icon);
     skycons.play();
 }

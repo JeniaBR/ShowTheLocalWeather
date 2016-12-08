@@ -12,6 +12,8 @@
     <!-- jQuery library -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <!--moment library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
@@ -26,16 +28,32 @@
             <div id="current-day-container">
                 <div id="city-region"></div>
                 <div id="country"></div>
-                <div id="current-temp"></div>
                 <div id="icon">
                     <canvas id="icon-temp"></canvas>
                 </div>
                 <div id="condition-temp"></div>
                 <div class="forecast-container">
-                    <div>
-                        <span><i class="fa fa-arrow-up" aria-hidden="true"></i></span><span><div id="high-temp"></div></span>
+                    <div id="forecast-main"></div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p id="forecast-hight">
+                                <span><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+                                <span id="high-temp"></span>
+                            </p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p id="forecast-low">
+                                <span><i class="fa fa-arrow-down" aria-hidden="true"></i></span>
+                                <span id="low-temp"></span>
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <hr class="style-one">
+                <div id="forecast-five-days">
+                    
+                </div>
+                <p>Wow this is so cool</p>
             </div>
         </div>
     </div>
