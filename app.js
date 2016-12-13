@@ -83,7 +83,7 @@ function drawFutureWeather(day, dayCondition, dayIcon, dayMinTemp, dayMaxTemp, i
 
 function setWeatherIcon(icon, id) {
     var skycons = new Skycons({
-        "color": "pink"
+        "color": "black"
     });
     skycons.add(id, icon);
     skycons.play();

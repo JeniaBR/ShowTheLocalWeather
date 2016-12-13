@@ -6,16 +6,36 @@
     max-width: 960px;
     position: relative;
     border-radius: 5px;
-    background-color: blueviolet;
+    background-color:beige;
     text-align: center;
+    font-family: 'Oswald', sans-serif;
 }
 
-hr.style-one {
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-    margin-bottom: 10px;
+#cel-to-fah{
+    float: right;
+}
+
+
+#city-region,#condition-temp,#forecast-main{
+    font-size: 2em;
+}
+
+hr{
+    border-color: black;
+}
+
+#forecast-hight{
+    font-size: 1.8em;
+    color: #E60B0B;
+}
+#forecast-low{
+    font-size: 1.8em;
+    color: #0B50E6;
+}
+
+#country{
+    font-size: 1.4em;
+    padding-bottom: 3.5em;
 }
 
 ul {
@@ -26,6 +46,7 @@ ul {
 .list-day {
     padding-top: 30px;
     padding-bottom: 30px;
+    font-size: 1.4em;
 }
 
 .list-icon {
@@ -35,20 +56,25 @@ ul {
 .list-condition {
     padding-top: 30px;
     padding-bottom: 30px;
+    font-size: 1.4em;
 }
 
-.parent {
-  position: relative;
-  color: blue;
-}
+
 
 #list-temp{
     padding-top: 30px;
     padding-bottom: 30px;
+    font-size: 1.4em;
 }
 
-.list-maxTemp,
-.list-minTemp {
+.list-maxTemp {
     margin-left: 4px;
     margin-right: 4px;
+    color: #E60B0B;
+
+}
+.list-minTemp{
+    margin-left: 4px;
+    margin-right: 4px;
+    color: #0B50E6;
 }
