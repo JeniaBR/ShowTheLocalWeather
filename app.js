@@ -55,8 +55,52 @@ function getUserLocation() {
                 if (i < 5) {
                     $('#forecast-five-days').append('<hr>');
                 }
-
             }
+
+            $('#temp-switch').on('click', function () {
+                var btnText = document.getElementsByTagName("BUTTON")[0].textContent;
+                if (!btnText.localeCompare('Fahrenheit')) {
+                    document.getElementById("temp-switch").textContent = "Celsius";
+                    temp = data.currently.temperature;
+                    minTemp = data.daily.data[0].temperatureMin;
+                    maxTemp = data.daily.data[0].temperatureMax;
+                    drawCurrentWeather(temp.toFixed(0), condition, icon, minTemp.toFixed(0), maxTemp.toFixed(0));
+
+                    $('#forecast-five-days').empty();
+                    for (var i = 1; i < 6; i++) {
+                        day = moment.unix(data.daily.data[i].time).format('dddd');
+                        dayCond = data.daily.data[i].icon.split('-').join(' ');
+                        dayIcon = data.daily.data[i].icon;
+                        dayMinTemp = data.daily.data[i].temperatureMin;
+                        dayMaxTemp = data.daily.data[i].temperatureMax;
+                        drawFutureWeather(day, dayCond, dayIcon, dayMinTemp.toFixed(0), dayMaxTemp.toFixed(0), daysArr[i]);
+                        if (i < 5) {
+                            $('#forecast-five-days').append('<hr>');
+                        }
+
+                    }
+
+                } else {
+                    document.getElementById("temp-switch").textContent = "Fahrenheit";
+                    temp = toCel(data.currently.temperature);
+                    minTemp = toCel(data.daily.data[0].temperatureMin);
+                    maxTemp = toCel(data.daily.data[0].temperatureMax);
+                    drawCurrentWeather(temp, condition, icon, minTemp, maxTemp);
+
+                    $('#forecast-five-days').empty();
+                    for (var i = 1; i < 6; i++) {
+                        day = moment.unix(data.daily.data[i].time).format('dddd');
+                        dayCond = data.daily.data[i].icon.split('-').join(' ');
+                        dayIcon = data.daily.data[i].icon;
+                        dayMinTemp = toCel(data.daily.data[i].temperatureMin);
+                        dayMaxTemp = toCel(data.daily.data[i].temperatureMax);
+                        drawFutureWeather(day, dayCond, dayIcon, dayMinTemp, dayMaxTemp, daysArr[i]);
+                        if (i < 5) {
+                            $('#forecast-five-days').append('<hr>');
+                        }
+                    }
+                }
+            });
         }
     }
 }

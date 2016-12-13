@@ -6,34 +6,43 @@
     max-width: 960px;
     position: relative;
     border-radius: 5px;
-    background-color:beige;
+    background-color: beige;
     text-align: center;
     font-family: 'Oswald', sans-serif;
+    box-shadow: 0px 0px 10px 0px #888888;
 }
 
-#cel-to-fah{
-    float: right;
+#cel-to-fah {
+    position: absolute;
+    padding-top: 0.8em;
 }
 
+.btn:focus {
+    border: none;
+    background-color: #5bc0de;
+}
 
-#city-region,#condition-temp,#forecast-main{
+#city-region,
+#condition-temp,
+#forecast-main {
     font-size: 2em;
 }
 
-hr{
+hr {
     border-color: black;
 }
 
-#forecast-hight{
+#forecast-hight {
     font-size: 1.8em;
     color: #E60B0B;
 }
-#forecast-low{
+
+#forecast-low {
     font-size: 1.8em;
     color: #0B50E6;
 }
 
-#country{
+#country {
     font-size: 1.4em;
     padding-bottom: 3.5em;
 }
@@ -59,9 +68,7 @@ ul {
     font-size: 1.4em;
 }
 
-
-
-#list-temp{
+#list-temp {
     padding-top: 30px;
     padding-bottom: 30px;
     font-size: 1.4em;
@@ -71,9 +78,9 @@ ul {
     margin-left: 4px;
     margin-right: 4px;
     color: #E60B0B;
-
 }
-.list-minTemp{
+
+.list-minTemp {
     margin-left: 4px;
     margin-right: 4px;
     color: #0B50E6;
