@@ -17,6 +17,10 @@
     padding-top: 0.8em;
 }
 
+#dark-sky{
+    font-size: 1.2em;
+}
+
 .btn:focus {
     border: none;
     background-color: #5bc0de;
